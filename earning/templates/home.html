@@ -1,0 +1,17 @@
+{% if user.is_authenticated %}
+<a href="{% url 'logout' %}">Logout</a><br>
+<h1> Welcome {{ user }}</h1>
+
+
+{% for hall in halls %}
+{{ hall.name_event }}
+{% endfor %}
+
+
+{% else %}
+
+<h1>Please login <a href="{% url 'login' %}">here </a></h1>
+<a href="{% url 'user_registration' %}">Sign up</a>
+
+
+{% endif %}
